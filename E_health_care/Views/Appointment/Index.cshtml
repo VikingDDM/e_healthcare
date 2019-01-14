@@ -1,0 +1,94 @@
+﻿@model IEnumerable<E_health_care.Models.AppointmentModel>
+
+@{
+
+    Layout = "~//Views//Shared//_MemberLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlotID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsNewCase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OldCaseNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppotimentTakenTime)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlotID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsNewCase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldCaseNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppotimentTakenTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.AppointmentID}) |
+                @Html.ActionLink("Details", "Details", new { id=item.AppointmentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="e_healthcare_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAppointments">
+    <Key>
+      <PropertyRef Name="intAppointmentID" />
+    </Key>
+    <Property Name="intAppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intSlotID" Type="int" />
+    <Property Name="intMemberID" Type="int" />
+    <Property Name="strPatientName" Type="varchar" MaxLength="50" />
+    <Property Name="intPatientAge" Type="int" />
+    <Property Name="strPatientGender" Type="varchar" MaxLength="7" />
+    <Property Name="strNotes" Type="varchar" MaxLength="50" />
+    <Property Name="blnIsNewCase" Type="bit" />
+    <Property Name="strOldCaseNo" Type="varchar" MaxLength="15" />
+    <Property Name="dtmAppotimentTakenTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAppointmentSlots">
+    <Key>
+      <PropertyRef Name="intSlotID" />
+    </Key>
+    <Property Name="intSlotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intDoctorID" Type="int" />
+    <Property Name="intClinicID" Type="int" />
+    <Property Name="dtmDate" Type="datetime" />
+    <Property Name="dtmStartTime" Type="datetime" />
+    <Property Name="dtmEndTime" Type="datetime" />
+    <Property Name="strStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAreas">
+    <Key>
+      <PropertyRef Name="intAreaId" />
+    </Key>
+    <Property Name="intAreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strAreaName" Type="varchar" MaxLength="50" />
+    <Property Name="intCityId" Type="int" />
+    <Property Name="intPinCode" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCancelations">
+    <Key>
+      <PropertyRef Name="intCancelationID" />
+    </Key>
+    <Property Name="intCancelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intAppointmentID" Type="int" />
+    <Property Name="intCancelByLoginID" Type="int" />
+    <Property Name="strReason" Type="varchar" MaxLength="50" />
+    <Property Name="dtmCancelDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCharges">
+    <Key>
+      <PropertyRef Name="intChargesID" />
+    </Key>
+    <Property Name="intChargesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intDoctorID" Type="int" />
+    <Property Name="intClinicID" Type="int" />
+    <Property Name="decNewCaseCharge" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="decOldCaseCharge" Type="decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblCities">
+    <Key>
+      <PropertyRef Name="intCityId" />
+    </Key>
+    <Property Name="intCityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCityName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblClinics">
+    <Key>
+      <PropertyRef Name="intClinicID" />
+    </Key>
+    <Property Name="intClinicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strClinicName" Type="varchar" MaxLength="50" />
+    <Property Name="intAreaID" Type="int" />
+    <Property Name="strAddress" Type="varchar" MaxLength="55" />
+    <Property Name="strPHoneNo" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tblDiesease">
+    <Key>
+      <PropertyRef Name="intDiseaseID" />
+    </Key>
+    <Property Name="intDiseaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDiseasedName" Type="varchar" MaxLength="50" />
+    <Property Name="strDiseasedDetails" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblDoctors">
+    <Key>
+      <PropertyRef Name="intDoctorID" />
+    </Key>
+    <Property Name="intDoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intLoginID" Type="int" />
+    <Property Name="strDoctorName" Type="varchar" MaxLength="50" />
+    <Property Name="intTypeID" Type="int" />
+    <Property Name="strDetails" Type="varchar" MaxLength="50" />
+    <Property Name="strPhoto" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDoctorTimes">
+    <Key>
+      <PropertyRef Name="intTimeID" />
+    </Key>
+    <Property Name="intTimeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intDoctorID" Type="int" />
+    <Property Name="intClinicID" Type="int" />
+    <Property Name="intDayNo" Type="int" />
+    <Property Name="dtmFromTime" Type="datetime" />
+    <Property Name="dtmToTime" Type="datetime" />
+    <Property Name="decCharges" Type="decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblDoctorTypes">
+    <Key>
+      <PropertyRef Name="intTypeId" />
+    </Key>
+    <Property Name="intTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDonner">
+    <Key>
+      <PropertyRef Name="intDonnerID" />
+    </Key>
+    <Property Name="intDonnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDonnerName" Type="varchar" MaxLength="50" />
+    <Property Name="decAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="strNotes" Type="varchar" MaxLength="50" />
+    <Property Name="dtmDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tblEvents">
+    <Key>
+      <PropertyRef Name="intEventID" />
+    </Key>
+    <Property Name="intEventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strEventTitle" Type="varchar" MaxLength="100" />
+    <Property Name="strEventDetails" Type="varchar" MaxLength="200" />
+    <Property Name="dtmDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tblLogins">
+    <Key>
+      <PropertyRef Name="intLoginid" />
+    </Key>
+    <Property Name="intLoginid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strEmail" Type="varchar" MaxLength="50" />
+    <Property Name="strPassword" Type="varchar" MaxLength="15" />
+    <Property Name="strUserType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMembers">
+    <Key>
+      <PropertyRef Name="intMemberID" />
+    </Key>
+    <Property Name="intMemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intLoginID" Type="int" />
+    <Property Name="strMemberName" Type="varchar" MaxLength="50" />
+    <Property Name="intAge" Type="int" />
+    <Property Name="strAddress" Type="varchar" MaxLength="50" />
+    <Property Name="strPhoneNo" Type="varchar" MaxLength="15" />
+    <Property Name="strGender" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="tblPayments">
+    <Key>
+      <PropertyRef Name="intPaymentID" />
+    </Key>
+    <Property Name="intPaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intAppoitmentID" Type="int" />
+    <Property Name="decAmount" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="strStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblVaccine">
+    <Key>
+      <PropertyRef Name="intVaccine" />
+    </Key>
+    <Property Name="intVaccine" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strVaccineName" Type="varchar" MaxLength="100" />
+    <Property Name="strVaccineDetails" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="e_healthcare_dbModelStoreContainer">
+    <EntitySet Name="tblAppointments" EntityType="Self.tblAppointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAppointmentSlots" EntityType="Self.tblAppointmentSlots" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAreas" EntityType="Self.tblAreas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCancelations" EntityType="Self.tblCancelations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCharges" EntityType="Self.tblCharges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCities" EntityType="Self.tblCities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClinics" EntityType="Self.tblClinics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDiesease" EntityType="Self.tblDiesease" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDoctors" EntityType="Self.tblDoctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDoctorTimes" EntityType="Self.tblDoctorTimes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDoctorTypes" EntityType="Self.tblDoctorTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDonner" EntityType="Self.tblDonner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEvents" EntityType="Self.tblEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogins" EntityType="Self.tblLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMembers" EntityType="Self.tblMembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPayments" EntityType="Self.tblPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVaccine" EntityType="Self.tblVaccine" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,35 @@
+﻿@model E_health_care.tblVaccine
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblVaccine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.strVaccineName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strVaccineName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strVaccineDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strVaccineDetails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.intVaccine }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model E_health_care.tblDonner
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblDonner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.strDonnerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strDonnerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.decAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.decAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtmDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtmDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.intDonnerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

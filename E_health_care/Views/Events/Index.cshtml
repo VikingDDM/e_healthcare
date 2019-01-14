@@ -1,0 +1,46 @@
+﻿@model IEnumerable<E_health_care.tblEvent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.strEventTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strEventDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtmDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strEventTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strEventDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtmDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.intEventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.intEventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.intEventID })
+        </td>
+    </tr>
+}
+
+</table>

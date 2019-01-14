@@ -1,0 +1,77 @@
+﻿@model IEnumerable<E_health_care.Models.DoctorTimeModel>
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClinicId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DayNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charges)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClinicId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DayNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Charges)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.TimeId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.TimeId }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.TimeId  })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

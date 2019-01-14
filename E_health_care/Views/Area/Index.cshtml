@@ -1,0 +1,52 @@
+﻿@model IEnumerable<E_health_careModels.AreaModel>
+
+@{
+    Layout = "~//Views//Shared//_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AreaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AreaId}) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.AreaId })
+        </td>
+    </tr>
+}
+
+</table>

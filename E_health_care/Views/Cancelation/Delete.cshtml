@@ -1,0 +1,74 @@
+﻿@model E_health_care.Models.CancelationModel
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>CancelationModel</h4>
+        <hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelationID)
+            </dt>
+    
+            <dd>
+                @Html.HiddenFor(model => model.CancelationID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AppointmentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AppointmentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelByLoginID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CancelByLoginID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Reason)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Reason)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelDateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CancelDateTime)
+            </dd>
+    
+        </dl>
+    
+      
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

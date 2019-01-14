@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="e_healthcare_dbModelStoreContainer" CdmEntityContainer="e_healthcare_dbEntities">
+    <EntitySetMapping Name="tblAppointments">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblAppointment">
+        <MappingFragment StoreEntitySet="tblAppointments">
+          <ScalarProperty Name="intAppointmentID" ColumnName="intAppointmentID" />
+          <ScalarProperty Name="intSlotID" ColumnName="intSlotID" />
+          <ScalarProperty Name="intMemberID" ColumnName="intMemberID" />
+          <ScalarProperty Name="strPatientName" ColumnName="strPatientName" />
+          <ScalarProperty Name="intPatientAge" ColumnName="intPatientAge" />
+          <ScalarProperty Name="strPatientGender" ColumnName="strPatientGender" />
+          <ScalarProperty Name="strNotes" ColumnName="strNotes" />
+          <ScalarProperty Name="blnIsNewCase" ColumnName="blnIsNewCase" />
+          <ScalarProperty Name="strOldCaseNo" ColumnName="strOldCaseNo" />
+          <ScalarProperty Name="dtmAppotimentTakenTime" ColumnName="dtmAppotimentTakenTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppointmentSlots">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblAppointmentSlot">
+        <MappingFragment StoreEntitySet="tblAppointmentSlots">
+          <ScalarProperty Name="intSlotID" ColumnName="intSlotID" />
+          <ScalarProperty Name="intDoctorID" ColumnName="intDoctorID" />
+          <ScalarProperty Name="intClinicID" ColumnName="intClinicID" />
+          <ScalarProperty Name="dtmDate" ColumnName="dtmDate" />
+          <ScalarProperty Name="dtmStartTime" ColumnName="dtmStartTime" />
+          <ScalarProperty Name="dtmEndTime" ColumnName="dtmEndTime" />
+          <ScalarProperty Name="strStatus" ColumnName="strStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAreas">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblArea">
+        <MappingFragment StoreEntitySet="tblAreas">
+          <ScalarProperty Name="intAreaId" ColumnName="intAreaId" />
+          <ScalarProperty Name="strAreaName" ColumnName="strAreaName" />
+          <ScalarProperty Name="intCityId" ColumnName="intCityId" />
+          <ScalarProperty Name="intPinCode" ColumnName="intPinCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCancelations">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblCancelation">
+        <MappingFragment StoreEntitySet="tblCancelations">
+          <ScalarProperty Name="intCancelationID" ColumnName="intCancelationID" />
+          <ScalarProperty Name="intAppointmentID" ColumnName="intAppointmentID" />
+          <ScalarProperty Name="intCancelByLoginID" ColumnName="intCancelByLoginID" />
+          <ScalarProperty Name="strReason" ColumnName="strReason" />
+          <ScalarProperty Name="dtmCancelDateTime" ColumnName="dtmCancelDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCharges">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblCharge">
+        <MappingFragment StoreEntitySet="tblCharges">
+          <ScalarProperty Name="intChargesID" ColumnName="intChargesID" />
+          <ScalarProperty Name="intDoctorID" ColumnName="intDoctorID" />
+          <ScalarProperty Name="intClinicID" ColumnName="intClinicID" />
+          <ScalarProperty Name="decNewCaseCharge" ColumnName="decNewCaseCharge" />
+          <ScalarProperty Name="decOldCaseCharge" ColumnName="decOldCaseCharge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCities">
+          <ScalarProperty Name="intCityId" ColumnName="intCityId" />
+          <ScalarProperty Name="strCityName" ColumnName="strCityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClinics">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblClinic">
+        <MappingFragment StoreEntitySet="tblClinics">
+          <ScalarProperty Name="intClinicID" ColumnName="intClinicID" />
+          <ScalarProperty Name="strClinicName" ColumnName="strClinicName" />
+          <ScalarProperty Name="intAreaID" ColumnName="intAreaID" />
+          <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+          <ScalarProperty Name="strPHoneNo" ColumnName="strPHoneNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDoctors">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblDoctor">
+        <MappingFragment StoreEntitySet="tblDoctors">
+          <ScalarProperty Name="intDoctorID" ColumnName="intDoctorID" />
+          <ScalarProperty Name="intLoginID" ColumnName="intLoginID" />
+          <ScalarProperty Name="strDoctorName" ColumnName="strDoctorName" />
+          <ScalarProperty Name="intTypeID" ColumnName="intTypeID" />
+          <ScalarProperty Name="strDetails" ColumnName="strDetails" />
+          <ScalarProperty Name="strPhoto" ColumnName="strPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDoctorTimes">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblDoctorTime">
+        <MappingFragment StoreEntitySet="tblDoctorTimes">
+          <ScalarProperty Name="intTimeID" ColumnName="intTimeID" />
+          <ScalarProperty Name="intDoctorID" ColumnName="intDoctorID" />
+          <ScalarProperty Name="intClinicID" ColumnName="intClinicID" />
+          <ScalarProperty Name="intDayNo" ColumnName="intDayNo" />
+          <ScalarProperty Name="dtmFromTime" ColumnName="dtmFromTime" />
+          <ScalarProperty Name="dtmToTime" ColumnName="dtmToTime" />
+          <ScalarProperty Name="decCharges" ColumnName="decCharges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDoctorTypes">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblDoctorType">
+        <MappingFragment StoreEntitySet="tblDoctorTypes">
+          <ScalarProperty Name="intTypeId" ColumnName="intTypeId" />
+          <ScalarProperty Name="strType" ColumnName="strType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogins">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblLogin">
+        <MappingFragment StoreEntitySet="tblLogins">
+          <ScalarProperty Name="intLoginid" ColumnName="intLoginid" />
+          <ScalarProperty Name="strEmail" ColumnName="strEmail" />
+          <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+          <ScalarProperty Name="strUserType" ColumnName="strUserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMembers">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblMember">
+        <MappingFragment StoreEntitySet="tblMembers">
+          <ScalarProperty Name="intMemberID" ColumnName="intMemberID" />
+          <ScalarProperty Name="intLoginID" ColumnName="intLoginID" />
+          <ScalarProperty Name="strMemberName" ColumnName="strMemberName" />
+          <ScalarProperty Name="intAge" ColumnName="intAge" />
+          <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+          <ScalarProperty Name="strPhoneNo" ColumnName="strPhoneNo" />
+          <ScalarProperty Name="strGender" ColumnName="strGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPayments">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblPayment">
+        <MappingFragment StoreEntitySet="tblPayments">
+          <ScalarProperty Name="intPaymentID" ColumnName="intPaymentID" />
+          <ScalarProperty Name="intAppoitmentID" ColumnName="intAppoitmentID" />
+          <ScalarProperty Name="decAmount" ColumnName="decAmount" />
+          <ScalarProperty Name="strStatus" ColumnName="strStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDieseases">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblDiesease">
+        <MappingFragment StoreEntitySet="tblDiesease">
+          <ScalarProperty Name="strDiseasedDetails" ColumnName="strDiseasedDetails" />
+          <ScalarProperty Name="strDiseasedName" ColumnName="strDiseasedName" />
+          <ScalarProperty Name="intDiseaseID" ColumnName="intDiseaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDonners">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblDonner">
+        <MappingFragment StoreEntitySet="tblDonner">
+          <ScalarProperty Name="dtmDate" ColumnName="dtmDate" />
+          <ScalarProperty Name="strNotes" ColumnName="strNotes" />
+          <ScalarProperty Name="decAmount" ColumnName="decAmount" />
+          <ScalarProperty Name="strDonnerName" ColumnName="strDonnerName" />
+          <ScalarProperty Name="intDonnerID" ColumnName="intDonnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVaccines">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblVaccine">
+        <MappingFragment StoreEntitySet="tblVaccine">
+          <ScalarProperty Name="strVaccineDetails" ColumnName="strVaccineDetails" />
+          <ScalarProperty Name="strVaccineName" ColumnName="strVaccineName" />
+          <ScalarProperty Name="intVaccine" ColumnName="intVaccine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEvents">
+      <EntityTypeMapping TypeName="e_healthcare_dbModel.tblEvent">
+        <MappingFragment StoreEntitySet="tblEvents">
+          <ScalarProperty Name="dtmDate" ColumnName="dtmDate" />
+          <ScalarProperty Name="strEventDetails" ColumnName="strEventDetails" />
+          <ScalarProperty Name="strEventTitle" ColumnName="strEventTitle" />
+          <ScalarProperty Name="intEventID" ColumnName="intEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

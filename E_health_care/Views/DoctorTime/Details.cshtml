@@ -1,0 +1,82 @@
+﻿@model E_health_care.Models.DoctorTimeModel
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>DoctorTimeModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TimeId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TimeId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DoctorId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DoctorId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ClinicId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ClinicId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DayNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DayNo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FromTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FromTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ToTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ToTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Charges)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Charges)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d24335d644ec4f899aeee568c9fb6542" Name="Diagram1">
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblAppointment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblAppointmentSlot" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblArea" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblCancelation" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblCharge" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblCity" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblClinic" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblDoctor" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblDoctorTime" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblDoctorType" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblLogin" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblMember" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblPayment" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblDiesease" Width="1.5" PointX="9.75" PointY="7.75" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblDonner" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblVaccine" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="e_healthcare_dbModel.tblEvent" Width="1.5" PointX="5.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="e_healthcare_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAppointment">
+    <Key>
+      <PropertyRef Name="intAppointmentID" />
+    </Key>
+    <Property Name="intAppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intSlotID" Type="Int32" />
+    <Property Name="intMemberID" Type="Int32" />
+    <Property Name="strPatientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intPatientAge" Type="Int32" />
+    <Property Name="strPatientGender" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="strNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="blnIsNewCase" Type="Boolean" />
+    <Property Name="strOldCaseNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="dtmAppotimentTakenTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblAppointmentSlot">
+    <Key>
+      <PropertyRef Name="intSlotID" />
+    </Key>
+    <Property Name="intSlotID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intDoctorID" Type="Int32" />
+    <Property Name="intClinicID" Type="Int32" />
+    <Property Name="dtmDate" Type="DateTime" Precision="3" />
+    <Property Name="dtmStartTime" Type="DateTime" Precision="3" />
+    <Property Name="dtmEndTime" Type="DateTime" Precision="3" />
+    <Property Name="strStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblArea">
+    <Key>
+      <PropertyRef Name="intAreaId" />
+    </Key>
+    <Property Name="intAreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intCityId" Type="Int32" />
+    <Property Name="intPinCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblCancelation">
+    <Key>
+      <PropertyRef Name="intCancelationID" />
+    </Key>
+    <Property Name="intCancelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intAppointmentID" Type="Int32" />
+    <Property Name="intCancelByLoginID" Type="Int32" />
+    <Property Name="strReason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtmCancelDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCharge">
+    <Key>
+      <PropertyRef Name="intChargesID" />
+    </Key>
+    <Property Name="intChargesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intDoctorID" Type="Int32" />
+    <Property Name="intClinicID" Type="Int32" />
+    <Property Name="decNewCaseCharge" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="decOldCaseCharge" Type="Decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblCity">
+    <Key>
+      <PropertyRef Name="intCityId" />
+    </Key>
+    <Property Name="intCityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblClinic">
+    <Key>
+      <PropertyRef Name="intClinicID" />
+    </Key>
+    <Property Name="intClinicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strClinicName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intAreaID" Type="Int32" />
+    <Property Name="strAddress" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="strPHoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblDoctor">
+    <Key>
+      <PropertyRef Name="intDoctorID" />
+    </Key>
+    <Property Name="intDoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intLoginID" Type="Int32" />
+    <Property Name="strDoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intTypeID" Type="Int32" />
+    <Property Name="strDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblDoctorTime">
+    <Key>
+      <PropertyRef Name="intTimeID" />
+    </Key>
+    <Property Name="intTimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intDoctorID" Type="Int32" />
+    <Property Name="intClinicID" Type="Int32" />
+    <Property Name="intDayNo" Type="Int32" />
+    <Property Name="dtmFromTime" Type="DateTime" Precision="3" />
+    <Property Name="dtmToTime" Type="DateTime" Precision="3" />
+    <Property Name="decCharges" Type="Decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblDoctorType">
+    <Key>
+      <PropertyRef Name="intTypeId" />
+    </Key>
+    <Property Name="intTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblLogin">
+    <Key>
+      <PropertyRef Name="intLoginid" />
+    </Key>
+    <Property Name="intLoginid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strPassword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="strUserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblMember">
+    <Key>
+      <PropertyRef Name="intMemberID" />
+    </Key>
+    <Property Name="intMemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intLoginID" Type="Int32" />
+    <Property Name="strMemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intAge" Type="Int32" />
+    <Property Name="strAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strPhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="strGender" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblPayment">
+    <Key>
+      <PropertyRef Name="intPaymentID" />
+    </Key>
+    <Property Name="intPaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intAppoitmentID" Type="Int32" />
+    <Property Name="decAmount" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="strStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="e_healthcare_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAppointments" EntityType="Self.tblAppointment" />
+    <EntitySet Name="tblAppointmentSlots" EntityType="Self.tblAppointmentSlot" />
+    <EntitySet Name="tblAreas" EntityType="Self.tblArea" />
+    <EntitySet Name="tblCancelations" EntityType="Self.tblCancelation" />
+    <EntitySet Name="tblCharges" EntityType="Self.tblCharge" />
+    <EntitySet Name="tblCities" EntityType="Self.tblCity" />
+    <EntitySet Name="tblClinics" EntityType="Self.tblClinic" />
+    <EntitySet Name="tblDoctors" EntityType="Self.tblDoctor" />
+    <EntitySet Name="tblDoctorTimes" EntityType="Self.tblDoctorTime" />
+    <EntitySet Name="tblDoctorTypes" EntityType="Self.tblDoctorType" />
+    <EntitySet Name="tblLogins" EntityType="Self.tblLogin" />
+    <EntitySet Name="tblMembers" EntityType="Self.tblMember" />
+    <EntitySet Name="tblPayments" EntityType="Self.tblPayment" />
+    <EntitySet Name="tblDieseases" EntityType="e_healthcare_dbModel.tblDiesease" />
+    <EntitySet Name="tblDonners" EntityType="e_healthcare_dbModel.tblDonner" />
+    <EntitySet Name="tblVaccines" EntityType="e_healthcare_dbModel.tblVaccine" />
+    <EntitySet Name="tblEvents" EntityType="e_healthcare_dbModel.tblEvent" />
+  </EntityContainer>
+  <EntityType Name="tblDiesease">
+    <Key>
+      <PropertyRef Name="intDiseaseID" />
+    </Key>
+    <Property Name="intDiseaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDiseasedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strDiseasedDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblDonner">
+    <Key>
+      <PropertyRef Name="intDonnerID" />
+    </Key>
+    <Property Name="intDonnerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDonnerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="decAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="strNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtmDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tblVaccine">
+    <Key>
+      <PropertyRef Name="intVaccine" />
+    </Key>
+    <Property Name="intVaccine" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strVaccineName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strVaccineDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="intEventID" />
+    </Key>
+    <Property Name="intEventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strEventTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strEventDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dtmDate" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

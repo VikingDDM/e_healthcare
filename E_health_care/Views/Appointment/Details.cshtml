@@ -1,0 +1,107 @@
+﻿@model E_health_care.Models.AppointmentModel
+
+@{
+
+    Layout = "~//Views//Shared//_MemberLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>AppointmentModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AppointmentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AppointmentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SlotID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SlotID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MemberID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MemberID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PatientName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientAge)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PatientAge)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientGender)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PatientGender)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Notes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IsNewCase)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IsNewCase)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OldCaseNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OldCaseNo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AppotimentTakenTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AppotimentTakenTime)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

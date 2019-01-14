@@ -1,0 +1,52 @@
+﻿@model IEnumerable<E_health_care.tblDonner>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.strDonnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.decAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtmDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strDonnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.decAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtmDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.intDonnerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.intDonnerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.intDonnerID })
+        </td>
+    </tr>
+}
+
+</table>

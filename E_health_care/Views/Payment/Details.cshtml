@@ -1,0 +1,58 @@
+﻿@model E_health_care.Models.PaymentModel
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>PaymentModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PaymentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AppoitmentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AppoitmentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

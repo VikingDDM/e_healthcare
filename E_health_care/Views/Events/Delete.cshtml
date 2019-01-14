@@ -1,0 +1,49 @@
+﻿@model E_health_care.tblEvent
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.strEventTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strEventTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strEventDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strEventDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtmDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtmDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

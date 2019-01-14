@@ -1,0 +1,80 @@
+﻿@model IEnumerable<E_health_care.Models.AppointmentSlotModel>
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SlotID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClinicID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlotID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClinicID)
+            </td>
+            <td>
+                @Convert.ToDateTime(item.StartTime).ToString("MM/dd/yyyy")
+                @*Html.DisplayFor(modelItem => item.Date)*@
+            </td>
+            <td>
+                @Convert.ToDateTime(item.StartTime).ToString("hh:mm")
+                @*Html.DisplayFor(modelItem => item.StartTime) *@
+            </td>
+            <td>
+                @Convert.ToDateTime(item.EndTime).ToString("hh:mm")
+                @*Html.DisplayFor(modelItem => item.EndTime)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.SlotID }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.SlotID }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.SlotID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

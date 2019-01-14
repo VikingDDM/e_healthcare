@@ -1,0 +1,75 @@
+﻿@model E_health_care.Models.ClinicModel
+
+@{
+    Layout = "~//Views//Shared//_AdminLayout.cshtml";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ClinicModel</h4>
+        <hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ClinicId)
+            </dt>
+    
+            <dd>
+                @Html.HiddenFor(model => model.ClinicId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ClinicName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ClinicName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AreaId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AreaId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNo)
+            </dd>
+    
+        </dl>
+    
+      
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

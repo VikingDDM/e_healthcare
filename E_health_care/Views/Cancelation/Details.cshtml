@@ -1,0 +1,66 @@
+﻿@model E_health_care.Models.CancelationModel
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>CancelationModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelationID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CancelationID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AppointmentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AppointmentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelByLoginID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CancelByLoginID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Reason)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Reason)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CancelDateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CancelDateTime)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

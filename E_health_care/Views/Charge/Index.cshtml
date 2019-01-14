@@ -1,0 +1,65 @@
+﻿@model IEnumerable<E_health_care.Models.ChargesModel>
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ChargesID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClinicID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewCaseCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OldCaseCharge)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChargesID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClinicID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewCaseCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldCaseCharge)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.ChargesID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ChargesID }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ChargesID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

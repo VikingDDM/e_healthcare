@@ -1,0 +1,43 @@
+﻿@model E_health_care.tblEvent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.strEventTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strEventTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.strEventDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.strEventDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtmDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtmDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.intEventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

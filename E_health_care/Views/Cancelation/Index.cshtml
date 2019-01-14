@@ -1,0 +1,65 @@
+﻿@model IEnumerable<E_health_care.Models.CancelationModel>
+
+@{
+    Layout = "~//Views//Shared//_DoctorLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CancelationID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CancelByLoginID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CancelDateTime)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CancelationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CancelByLoginID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CancelDateTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.CancelationID  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.CancelationID  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.CancelationID  })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

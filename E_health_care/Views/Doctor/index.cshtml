@@ -1,0 +1,64 @@
+﻿@model IEnumerable<E_health_care.Models.DoctorModel>
+
+@{
+    Layout = "~//Views//Shared//_AdminLayout.cshtml";
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Details)
+        </td>
+        <td>
+           <img src="~/UploadedFiles/@Html.DisplayFor(modelItem => item.Photo)" width="100" height="100" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DoctorID }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.DoctorID  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.DoctorID  })
+        </td>
+    </tr>
+}
+
+</table>

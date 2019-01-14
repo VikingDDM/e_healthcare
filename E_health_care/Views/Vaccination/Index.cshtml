@@ -1,0 +1,40 @@
+﻿@model IEnumerable<E_health_care.tblVaccine>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.strVaccineName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strVaccineDetails)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strVaccineName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strVaccineDetails)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.intVaccine }) |
+            @Html.ActionLink("Details", "Details", new { id=item.intVaccine }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.intVaccine })
+        </td>
+    </tr>
+}
+
+</table>
