@@ -38,3 +38,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-01-24T09:47:34 - Minor cleanup
 2019-01-24T14:35:14 - Initial setup
 2019-01-24T13:11:27 - Improve UI/UX
+2019-01-24T13:47:50 - Fix bug in logic
