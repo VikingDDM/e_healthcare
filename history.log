@@ -100,3 +100,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-02-18T11:22:28 - Improve performance
 2019-02-18T15:01:38 - Add new feature
 2019-02-18T10:06:08 - Remove unused code
+2019-02-18T10:19:38 - Add tests
