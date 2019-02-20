@@ -79,3 +79,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-02-19T09:50:11 - Refactor code structure
 2019-02-19T11:57:57 - Add new feature
 2019-02-19T17:42:07 - Add new feature
+2019-02-19T16:45:11 - Fix bug in logic
