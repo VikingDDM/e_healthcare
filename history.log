@@ -138,3 +138,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-03-07T18:17:37 - Refactor code structure
 2019-03-07T18:57:51 - Minor cleanup
 2019-03-07T13:40:32 - Refactor code structure
+2019-03-07T14:37:19 - Remove unused code
