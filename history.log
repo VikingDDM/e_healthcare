@@ -168,3 +168,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-03-15T14:05:32 - Improve UI/UX
 2019-03-15T14:46:11 - Initial setup
 2019-03-18T15:02:02 - Remove unused code
+2019-03-18T15:14:36 - Add tests
