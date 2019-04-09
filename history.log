@@ -220,3 +220,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-04-09T14:41:41 - Fix bug in logic
 2019-04-09T10:56:14 - Fix bug in logic
 2019-04-09T09:04:31 - Add tests
+2019-04-09T13:45:25 - Improve UI/UX
