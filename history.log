@@ -299,3 +299,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-05-21T17:43:29 - Add tests
 2019-05-21T15:47:28 - Improve performance
 2019-05-21T15:53:55 - Remove unused code
+2019-05-21T13:25:19 - Remove unused code
