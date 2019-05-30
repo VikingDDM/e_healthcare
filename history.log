@@ -329,3 +329,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-06-03T12:58:38 - Remove unused code
 2019-06-03T09:19:30 - Remove unused code
 2019-06-03T15:39:08 - Add tests
+2019-05-30T15:23:37 - Initial setup
