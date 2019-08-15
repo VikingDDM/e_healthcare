@@ -497,3 +497,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-08-13T10:53:54 - Add tests
 2019-08-15T16:10:16 - Improve UI/UX
 2019-08-15T16:13:06 - Update documentation
+2019-08-15T12:50:05 - Fix bug in logic
