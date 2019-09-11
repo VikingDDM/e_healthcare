@@ -532,3 +532,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-09-11T17:47:51 - Minor cleanup
 2019-09-11T14:39:14 - Add tests
 2019-09-11T15:36:09 - Minor cleanup
+2019-09-11T16:47:18 - Fix bug in logic
