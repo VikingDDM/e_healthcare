@@ -676,3 +676,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-11-06T11:15:44 - Fix bug in logic
 2019-11-06T12:38:30 - Add tests
 2019-11-01T18:34:07 - Update documentation
+2019-11-01T15:52:22 - Refactor code structure
