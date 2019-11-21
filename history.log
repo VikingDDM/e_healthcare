@@ -712,3 +712,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-11-19T13:34:58 - Initial setup
 2019-11-14T16:40:36 - Add new feature
 2019-11-14T18:05:34 - Add tests
+2019-11-21T09:46:13 - Refactor code structure
