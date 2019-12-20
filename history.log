@@ -760,3 +760,4 @@ git add -f history.log2019-01-14T14:10:18 - Update documentation
 2019-12-12T14:41:21 - Improve performance
 2019-12-12T12:14:25 - Initial setup
 2019-12-12T15:00:26 - Fix bug in logic
+2019-12-20T13:55:23 - Remove unused code
